@@ -1,0 +1,238 @@
+/* Basic Styling */
+html{
+	scroll-behavior: smooth;
+}
+:root{
+	font-size:16px ;
+	--green-text:#0E4722;
+	--green-primary:#40CE74;
+	--green-light: #D0F4DC;
+	--red-text:#4e0e13;
+	--red-primary:#ff6f7b;
+	--red-light: #ffd6da;
+	--yellow-text:#4b3c0c;
+	--yellow-primary:#fcd34e;
+	--yellow-light: #fff7db;
+	--background: rgb(61, 61, 61);
+	scrollbar-width: thin;
+	scrollbar-color:  var(--green-primary) var(--background);
+}
+html, body{
+	height: 100%;
+}
+body{
+	display:flex;
+	flex-direction:column;
+	flex-wrap: nowrap;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body::-webkit-scrollbar {
+	width: 0.5rem;
+}
+body::-webkit-scrollbar-track{
+	background: var(--background);
+}
+body::-webkit-scrollbar-thumb{
+	background: var(--green-primary);
+	border-radius: 0.5rem
+}
+header{
+	margin: 0px;
+	color:var(--green-primary);
+	font-size: 40;
+	background: rgb(61, 61, 61);	padding:10px 1%;
+}
+footer{
+	padding:10px 1%;
+	background-color: lightgrey;
+}
+section{
+	padding: 1px 1%;
+}
+h1{
+	text-align: center;
+}
+h2{
+	text-align: left;
+}
+
+/* Flexible layout for navbar and footer*/
+.navbar{
+	flex-shrink: 0;
+}
+.navbar-nav{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	float:left;
+}
+.nav-logo{
+	width: 5rem;
+	margin-bottom: 4rem;
+}
+.nav-item{
+	font-size: 0.5rem;
+	font-weight: bold;
+}
+.navbar > a{
+	display: block;
+	margin: 0px;
+	padding: 5px 10px;
+	float:right;
+	color:var(--green-primary);
+	text-decoration: none;
+	font-size: 1.25rem;
+}
+.navbar > a:hover{
+	color:var(--red-primary);
+	transition-duration: 0.1s;
+}
+.navbar > h2:first-child{
+	margin: auto 10px;
+	float:left;
+	color:var(--green-primary);
+	font-size: 2.5rem;
+}
+.content{
+	margin: 5 auto;
+	flex: 1 0 auto
+}
+.footer{
+	flex-shrink: 0;
+}
+
+/* Individual class/object styling*/
+.titlecard{
+	padding: 10%;
+	background: var(--green-light);
+}
+.titlecard-small{
+	padding: 5%;
+	background: var(--green-light);
+}
+.center{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.button{
+	background-color:var(--green-primary);
+	border: 2px solid var(--green-primary);
+	border-radius: 8px;
+	padding: 15px;
+	color: var(--green-text);
+	text-decoration: none;
+	font-weight: bold;
+	margin: 10px;
+	width: 11rem;
+}
+.button:hover {
+	background-color: var(--green-light);
+	color: var(--green-text);
+	transition-duration: 0.1s;
+}
+.widebutton{
+	background-color:var(--green-primary);
+	border: 2px solid var(--green-primary);
+	border-radius: 8px;
+	padding: 15px;
+	color: var(--green-text);
+	text-decoration: none;
+	font-weight: bold;
+	margin: 10px;
+	width: 16.5rem;
+}
+.widebutton:hover {
+	background-color: var(--green-light);
+	color: var(--green-text);
+	transition-duration: 0.1s;
+}
+
+.pyra{
+	background-color:var(--red-primary);
+	border: 2px solid var(--red-primary);
+	color: var(--red-text);
+
+}
+
+.pyra:hover {
+	background-color: var(--red-light);
+	color: var(--red-text);
+	transition-duration: 0.1s;
+}
+
+.mythra{
+	background-color: var(--yellow-primary);
+	border: 2px solid var(--yellow-primary);
+	color: var(--yellow-text);
+}
+.mythra:hover {
+	border: 2px solid var(--yellow-primary);
+	background-color: var(--yellow-light);
+	color: var(--yellow-text);
+	transition-duration: 0.1s;
+}
+.bodycontent{
+	margin: auto;
+	width: 90vw;
+	line-height: 150%;
+}
+
+/*Text Formatting*/
+.title{
+	color:var(--green-text);
+	font-size: 40px;
+}
+
+.subtitle{
+	color:var(--green-text);
+	font-size: 22px;
+	font-style: italic;
+	font-weight: normal;
+}
+.heading{
+	font-weight: normal;
+	color:var(--green-text);
+	font-size:30px;
+}
+.subheading{
+	font-weight: lighter;
+	color:var(--green-text);
+	font-size:18px;
+	font-style: italic;
+}
+.logo{
+	height: 2rem;
+}
+b {
+	text-decoration: underline;
+}
+.yt1{
+	position: relative;
+	height: 0;
+	width: 100%;
+	padding-bottom: 56.25%; /* 16:9 */
+}
+
+.yt1 iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.yt2{
+	margin: 0px;
+}
+  
+.grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 1rem;
+}
