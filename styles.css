@@ -1,0 +1,230 @@
+/* Basic Styling */
+html{
+	scroll-behavior: smooth;
+}
+:root{
+	font-size:16px ;
+	--text-light:white;
+	--text-dark:black;
+	--primary-dark:#392e52;
+	--primary: #9479d4;
+	--primary-light: #dacaff;
+	--secondary-dark:#4e0e13;
+	--secondary:#ff6f7b;
+	--secondary-light: #ffd6da;
+	--tertiary-dark:#4b3c0c;
+	--tertiary:#fcd34e;
+	--tertiary-light: #fff7db;
+	--background: rgb(61, 61, 61);
+	scrollbar-width: thin;
+	scrollbar-color:  var(--primary) var(--background);
+}
+html, body{
+	height: 100%;
+}
+body{
+	display:flex;
+	flex-direction:column;
+	flex-wrap: nowrap;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body::-webkit-scrollbar {
+	width: 0.5rem;
+}
+body::-webkit-scrollbar-track{
+	background: var(--background);
+}
+body::-webkit-scrollbar-thumb{
+	background: var(--primary);
+	border-radius: 0.5rem
+}
+header{
+	margin: 0px;
+	color:var(--primary-dark);
+	font-size: 40;
+	background: var(--background);	padding:10px 1%;
+}
+footer{
+	padding:10px 1%;
+	background-color: lightgrey;
+}
+section{
+	padding: 1px 1%;
+}
+h1{
+	text-align: center;
+}
+h2{
+	text-align: left;
+}
+
+/* Flexible layout for navbar and footer*/
+
+/*
+transparent navbar, doesn't work on mobile though so need an alternative design for mobile if we want to use this (it looks so much nicer)
+
+.navbar{
+	vertical-align: middle;
+	position: fixed;
+	width: 99%;
+	text-align: left;
+}
+.navbar > a{
+	display: block;
+	margin: 0px;
+	padding: 5px 10px;
+	float:right;
+	-webkit-text-stroke-width: 0.01rem;
+	-webkit-text-stroke-color: var(--primary-dark);
+	color:var(--primary-light);
+	text-decoration: none;
+	font-size: 1.5rem;
+}*/
+
+.navbar{
+	vertical-align: middle;
+	flex-shrink: 0;
+	width: 99%;
+	text-align: left;
+}
+.navbar > a{
+	display: block;
+	margin: 0px;
+	padding: 5px 10px;
+	float:right;
+	color:var(--primary-light);
+	text-decoration: none;
+	font-size: 1.25rem;
+}
+.navbar > a:hover{
+	color:var(--secondary);
+	transition-duration: 0.1s;
+}
+.navbar > img{
+	padding: 0;
+	margin: 0;
+	height: 2rem;
+}
+.content{
+	margin: 5 auto;
+	flex: 1 0 auto
+}
+.footer{
+	flex-shrink: 0;
+}
+/*flexible nav/footer end*/
+
+.hero{ /* For the index only*/
+	background-image: linear-gradient(rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.5)), url("images/bg1.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 10%;
+}
+.hero-small{ /* For the pages directly off the navbar/homepage.*/
+	padding: 5%;
+	background-image: linear-gradient(rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.5)), url("images/bg2.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-small2{ /* the "level 3" title card, for pages gotten to from a page that has "hero-small" as it's hero. Has a different BG image then both the ones above*/
+	padding: 5%;
+	background-image: linear-gradient(rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.5)), url("images/bg3.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.title{
+	color:var(--text-light);
+	font-size: 40px;
+}
+
+.subtitle{
+	color:var(--text-light);
+	font-size: 22px;
+	font-style: italic;
+	font-weight: normal;
+}
+.center{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.button{ /* main button class, for a wider one add the "wide" class as well. If we want to change colors, do that in a new class.*/
+	background-color:var(--primary-dark);
+	border: 2px solid var(--primary-dark);
+	border-radius: 8px;
+	padding: 15px;
+	color: var(--text-light);
+	text-decoration: none;
+	font-weight: bold;
+	margin: 10px;
+	width: 11rem;
+}
+.button:hover {
+	background-color: var(--primary);
+	color: var(--text-light);
+	transition-duration: 0.1s;
+}
+.button .wide{
+	background-color:var(--primary-dark);
+	border: 2px solid var(--primary-dark);
+	border-radius: 8px;
+	padding: 15px;
+	color: var(--text-light);
+	text-decoration: none;
+	font-weight: bold;
+	margin: 10px;
+	width: 16.5rem;
+}
+
+.bodycontent{
+	margin: auto;
+	width: 90vw;
+	line-height: 150%;
+}
+
+/*Text Formatting*/
+.heading{
+	font-weight: normal;
+	color:var(--primary-dark);
+	font-size:30px;
+}
+.subheading{
+	font-weight: lighter;
+	color:var(--text-light);
+	font-size:18px;
+	font-style: italic;
+}
+b { /*probably should change this to an emphasis and not a bold tag but i'm too lazy*/
+	text-decoration: underline;
+}
+.yt1{
+	position: relative;
+	height: 0;
+	width: 100%;
+	padding-bottom: 56.25%; /* 16:9 */
+}
+
+.yt1 iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.yt2{
+	margin: 0px;
+}
+  
+.grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 1rem;
+}
