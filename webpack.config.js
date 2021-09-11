@@ -11,7 +11,10 @@ const config = (env, args) => {
 
   return {
     devtool: isProd ? 'source-map' : 'inline-source-map',
-    entry: path.join(__dirname, './js/src/index.ts'),
+    entry: {
+      FrameDataViewer: path.join(__dirname, './js/src/FrameDataViewer.ts'),
+      index: path.join(__dirname, './js/src/index.ts'),
+    },
     mode: args.mode,
     module: {
       rules: [
