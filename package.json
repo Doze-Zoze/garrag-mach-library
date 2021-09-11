@@ -1,0 +1,51 @@
+{
+  "name": "garreg-mach-library",
+  "version": "1.0.0",
+  "description": "Repository of byleth information",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development --config webpack.config.js",
+    "check-types": "tsc --noemit",
+    "eslint": "eslint js/src",
+    "lint": "npm run eslint && npm run check-types",
+    "test": "npm run lint",
+    "watch": "webpack watch --mode development --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doze-Zoze/garreg-mach-library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doze-Zoze/garreg-mach-library/issues"
+  },
+  "homepage": "https://github.com/Doze-Zoze/garreg-mach-library#readme",
+  "dependencies": {
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-transform-regenerator": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.19",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.10.1",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
