@@ -60,14 +60,14 @@ const config = (env, args) => {
         },
       }),
       extensions: ['.ts', '.js'],
-      fallback: {
-        assert: require.resolve('assert/'),
-        buffer: require.resolve('buffer/'),
-        path: require.resolve('path-browserify'),
-        stream: require.resolve('stream-browserify'),
-        util: require.resolve('util/'),
-        zlib: require.resolve('browserify-zlib'),
-      },
+      // fallback: {
+      //   assert: require.resolve('assert/'),
+      //   buffer: require.resolve('buffer/'),
+      //   path: require.resolve('path-browserify'),
+      //   stream: require.resolve('stream-browserify'),
+      //   util: require.resolve('util/'),
+      //   zlib: require.resolve('browserify-zlib'),
+      // },
     },
   };
 };
