@@ -29,6 +29,10 @@ const FrameDataViewer: FC<FrameDataViewerProps> = ({ id }) => {
   const [frames, setFrames] = useState<ParsedFrame[] | null>(null);
   const [frameCount, setFrameCount] = useState(0);
   const [playing, setIsPlaying] = useState(false);
+
+  const tempCanvasId = `frame-data-viewer-temp-canvas-${id}`;
+  const canvasId = `frame-data-viewer-canvas-${id}`;
+  const tempCanvasRef = useRef<HTMLCanvasElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -42,10 +46,12 @@ const FrameDataViewer: FC<FrameDataViewerProps> = ({ id }) => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (frames != null && canvas != null) {
+    const tempCanvas = tempCanvasRef.current;
+    if (frames != null && canvas != null && tempCanvas != null) {
       const canvasContext = canvas.getContext('2d');
+      const tempContext = canvas.getContext('2d');
 
-      if (canvasContext) {
+      if (canvasContext && tempContext) {
         const frame = frames[frameCount];
         const imageData = canvasContext.createImageData(
           frame.dims.width,
@@ -67,7 +73,15 @@ const FrameDataViewer: FC<FrameDataViewerProps> = ({ id }) => {
   return (
     <div>
       <h1>{id}</h1>
-      <canvas id={`frame-data-viewer-canvas-${id}`} ref={canvasRef}></canvas>
+      <canvas id={tempCanvasId} ref={tempCanvasRef}></canvas>
+      <canvas id={canvasId} ref={canvasRef}></canvas>
+      <button
+        onClick={(): void =>
+          setFrameCount((n) => (n < frames.length - 1 ? n + 1 : 0))
+        }
+      >
+        Next frame
+      </button>
     </div>
   );
 };
